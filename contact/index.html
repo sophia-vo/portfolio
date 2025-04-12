@@ -11,34 +11,24 @@
         <ul>
             <li><a href="../index.html">Home</a></li>       
             <li><a href="../projects/index.html">Projects</a></li> 
-            <li><a href="index.html">Contact</a></li>     
+            <li><a href="index.html" class="current">Contact</a></li>     
             <li><a href="../resume/index.html">Resume</a></li>
             <li><a href="https://github.com/sophia-vo" target="_blank">GitHub</a></li>
         </ul>
     </nav>
     <h1>Contact Me</h1>
-    <form action="mailto:sovo@ucsd.edu" method="GET" enctype="text/plain">
-        <p>
-            <label>
-                Your Email:
-                <input type="email" name="email" required value="example@example.com">
-            </label>
-        </p>
-        <p>
-            <label>
-                Subject:
-                <input name="subject" required value="Example Contact Form">
-            </label>
-        </p>
-        <p>
-            <label>
-                Message:
-                <textarea name="body" rows="5" required>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sunt nesciunt? Totam error dicta, soluta ea ad assumenda praesentium dolorem saepe harum, necessitatibus quisquam aliquid exercitationem laudantium iusto perspiciatis quia.</textarea>
-            </label>
-        </p>
-        <p>
-            <button>Send Email</button>
-        </p>
+    <form action="mailto:sovo@ucsd.edu" method="POST" enctype="text/plain">
+        <label>Your Email:</label>
+        <input type="email" name="email" required value="example@example.com">
+    
+        <label>Subject:</label>
+        <input name="subject" required value="Example Contact Form">
+    
+        <label>Message:</label>
+        <textarea name="body" rows="5" required>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sunt nesciunt? Totam error dicta, soluta ea ad assumenda praesentium dolorem saepe harum, necessitatibus quisquam aliquid exercitationem laudantium iusto perspiciatis quia.</textarea>
+    
+        <button style="grid-column: 1 / -1;">Send Email</button>
+            
     </form>
 </body>
 </html>
