@@ -1,3 +1,7 @@
+html {
+  color-scheme: light dark;
+}
+
 body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
@@ -14,11 +18,15 @@ nav ul, nav li {
   
   
   nav {
-    display: flex; 
-    gap: 0.5em; 
-    margin-bottom: 1.5em; 
-    border-bottom: 1px solid oklch(80% 3% 200); 
+    --border-color: oklch(50% 10% 200 / 40%); 
+
+    display: flex;
+    gap: 0.5em;
+    margin-bottom: 1.5em;
+
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5em;
+    margin-top: 2.5rem;  
   }
   
   nav a {
@@ -31,8 +39,10 @@ nav ul, nav li {
   }
   
   nav a.current {
-    border-bottom-color: oklch(85% 3% 200); 
-    font-weight: bold; 
+
+    border-bottom-color: var(--border-color);
+    font-weight: bold;
+    border-bottom-color: oklch(from var(--border-color) l c h / 60%);
   }
   
   :root { 
@@ -44,8 +54,8 @@ nav ul, nav li {
 }
 
 nav a:hover {
-  border-bottom-color: var(--color-accent); 
-  background-color: oklch(from var(--color-accent) 95% 5% h / 0.8); 
+  border-bottom-color: var(--color-accent);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 img {
@@ -145,6 +155,7 @@ form button:hover {
 h1 {
   font-size: 3rem; 
   margin-bottom: 0.5em; 
+}
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1; 
@@ -190,4 +201,30 @@ h1, h2, h3, h4, h5, h6 {
 
 #certifications p {
     line-height: 1.6;
+}
+
+header {
+  position: relative;  
+}
+
+/* .color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%; 
+} */
+
+.color-scheme {
+  position: fixed;  
+  top: 1rem;         
+  right: 1rem;      
+  font-size: 80%;
+  z-index: 999;      
+}
+
+form input,
+form textarea,
+form button,
+select { 
+  font: inherit;
 }
