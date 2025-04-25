@@ -228,3 +228,45 @@ form button,
 select { 
   font: inherit;
 }
+
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem 1.5rem;
+  justify-items: start;
+  background: #f9f9f9;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+#profile-stats dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #555;
+  margin: 0;
+}
+
+#profile-stats dd {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (min-width: 400px) {
+    #profile-stats dl {
+        grid-template-columns: repeat(4, 1fr);
+    }
+     #profile-stats dt, #profile-stats dd {
+         grid-column: auto; 
+         text-align: left;
+     }
+     #profile-stats dt {
+         grid-row: 1; 
+         margin-bottom: 0;
+     }
+     #profile-stats dd {
+         grid-row: 2; 
+     }
+}
