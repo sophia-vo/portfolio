@@ -270,3 +270,17 @@ select {
          grid-row: 2; 
      }
 }
+
+/* Style for the project year */
+.project-year {
+  font-size: 0.85em;
+  color: #666; /* Gray color */
+  margin-top: 0.5em;
+  font-family: Baskerville, 'Times New Roman', Times, serif; /* Example font */
+  font-variant-numeric: oldstyle-nums; /* Use oldstyle numbers if font supports */
+}
+
+/* Optional: Adjust spacing if needed */
+.project-details {
+    margin-top: 0.5em;
+}

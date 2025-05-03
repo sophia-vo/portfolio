@@ -135,6 +135,11 @@ export async function fetchJSON(url) {
 
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   containerElement.innerHTML = '';
+  
+  if (!projects || projects.length === 0) {
+    containerElement.innerHTML = '<p>No projects to display.</p>';
+    return;
+ }
 
   projects.forEach(project => {
     const article = document.createElement('article');
@@ -148,6 +153,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     <h3>${project.title}</h3>
     <img src="${project.image}" alt="${project.title}">
     <p>${project.description}</p>
+    <p class="project-year">Year: ${year}</p>
 `   ;
 
     containerElement.appendChild(article);
