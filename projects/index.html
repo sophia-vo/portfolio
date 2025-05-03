@@ -18,6 +18,26 @@
         </ul>
     </nav> -->
     <h1 class="projects-title">My Projects <span class="project-count"></span></h1>
+    
+
+  <!-- NEW: pie & legend container -->
+  <div class="chart-container">
+    <svg id="projects-pie-plot" viewBox="-50 -50 100 100"></svg>
+    <ul class="legend"></ul>
+  </div>
+  
+  <div class="no-results" hidden>
+    😕 No projects found.
+  </div>
+  
+  <input
+    class="searchBar"
+    type="search"
+    aria-label="Search projects"
+    placeholder="🔍 Search projects…"
+  />
+
+    
 <div class="projects">
     <script src="../global.js" type="module"></script>
     <script src="projects.js" type="module"></script>

@@ -271,16 +271,129 @@ select {
      }
 }
 
-/* Style for the project year */
 .project-year {
-  font-size: 0.85em;
-  color: #666; /* Gray color */
-  margin-top: 0.5em;
-  font-family: Baskerville, 'Times New Roman', Times, serif; /* Example font */
-  font-variant-numeric: oldstyle-nums; /* Use oldstyle numbers if font supports */
+  font-size: 3em;
+  color: #666; 
+  margin-top: 2em;
+  font-family: Baskerville, 'Times New Roman', Times, serif; 
+  font-variant-numeric: oldstyle-nums; 
 }
 
-/* Optional: Adjust spacing if needed */
 .project-details {
-    margin-top: 0.5em;
+    margin-top: 1em;
+}
+
+.projects article p.project-year {
+  font-size: 1.1em;    
+  margin-top: 0.5em; 
+}
+
+.chart-container {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  margin-block: 2em;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  overflow: visible;
+}
+
+/* legend grid + swatches */
+/* .legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 0.5em 1em;
+  list-style: none;
+  padding: 0.5em;
+  border: 1px solid #eee;
+  border-radius: 5px;
+} */
+.legend {
+  flex: 1;       
+  min-width: 0;  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+  gap: 0.5em 1em;
+  padding: 0.5em;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+
+@container (max-width: 12em) {
+  .legend li {
+    font-size: 0.8em;          
+    line-height: 1.2;          
+    word-break: break-word;    
+  }
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.legend .swatch {
+  display: inline-block;
+  width: 1em;
+  aspect-ratio: 1/1;
+  background-color: var(--color);
+  border-radius: 2px;
+}
+
+
+#projects-pie-plot path {
+  transition: opacity 300ms;
+  cursor: pointer;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+#projects-pie-plot path.selected {
+  fill: oklch(60% 45% 0)  !important;
+}
+
+.legend li.selected .swatch {
+  background-color: oklch(60% 45% 0)  !important;
+}
+
+.searchBar {
+  display: block;     
+  width: 100%;         
+  max-width: none;    
+  margin: 1.5em 0;     
+  padding: 0.6em 1em;
+  font-size: 1rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 0.5em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  transition: border-color 150ms, box-shadow 150ms;
+  background-color: canvas;
+}
+
+.searchBar:focus {
+  outline: none;
+  border-color: color-mix(in oklch, var(--color-accent) 80%, canvas 20%);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-accent) / 0.2);
+}
+
+.no-results {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 2em 0;
+}
+
+.chart-container {
+}
+
+.chart-container.hidden,
+.legend.hidden {
+  display: none !important;
 }
