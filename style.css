@@ -397,3 +397,63 @@ select {
 .legend.hidden {
   display: none !important;
 }
+
+/*---------------------------------------------------
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+  gap: 0.5em 1em;
+  margin-bottom: 2em;
+}
+.stats dt {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #555;
+  margin: 0;
+}
+.stats dd {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.info.tooltip {
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 3px 9px rgba(0,0,0,0.4);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  transition: opacity 0.2s;
+}
+.info.tooltip[hidden] {
+  opacity: 0;
+  visibility: hidden;
+}
+circle.selected {
+  stroke: #ff6b6b;
+  stroke-width: 2px;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  stroke: none;
+  fill: var(--color-accent) !important;
+  fill-opacity: 1 !important;
+}
+
+:root {
+  --color-accent: oklch(65% 50% 0);
+}

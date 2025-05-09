@@ -9,6 +9,7 @@ const pages = [
     { url: 'projects/', title: 'Projects' },
     { url: 'contact/', title: 'Contact' },
     { url: 'resume/', title: 'Resume' },
+    { url: 'meta/', title: 'Meta' },
     { url: 'https://github.com/sophia-vo', title: 'GitHub' } 
   ];
   
@@ -143,12 +144,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
   projects.forEach(project => {
     const article = document.createElement('article');
-
-    // const title = project.title ?? 'Untitled Project';
-    // const imageSrc = project.image ?? 'path/to/default.png'; // Provide a default image path
-    // const description = project.description ?? 'No description available.';
-    // const year = project.year ? `<span class="project-year">(${project.year})</span>` : ''; // Add year if exists
-
+    
     article.innerHTML = `
     <h3>${project.title}</h3>
     <img src="${project.image}" alt="${project.title}">
