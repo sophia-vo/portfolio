@@ -398,8 +398,6 @@ select {
   display: none !important;
 }
 
-/*---------------------------------------------------
-
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
