@@ -1,25 +1,59 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Meta</title>
-    <link rel="stylesheet" href="../style.css">
-    <script type="module" src="../global.js"></script>
-  </head>
-  
-  <body>
-    <h1>Meta</h1>
-    
-    <h2>Summary</h2>
-    <div id="stats"></div>
 
-    <h2>Commits by time of day</h2>
-    <div id="chart"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Meta</title>
+  <link rel="stylesheet" href="../style.css">
+  <script type="module" src="../global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollama@3.2.0/dist/scrollama.min.js"></script> <!-- Added scrollama -->
+</head>
 
-    <p id="selection-count">No commits selected</p>
-    <dl id="language-breakdown" class="stats"></dl>
+<body>
+  <h1>Meta</h1>
 
-    <script type="module" src="main.js"></script>
-  </body>
+  <!-- Slider UI removed -->
+
+  <h2>Summary of All Commits</h2>
+  <div id="stats"></div>
+
+  <!-- Scrollytelling structure for Scatter Plot -->
+  <div id="scrolly-1">
+    <div id="scatter-story">
+      <!-- Steps will be generated here by JavaScript -->
+    </div>
+    <div id="scatter-plot">
+      <h2>Commits by Time of Day</h2>
+      <div id="chart"></div>
+      <p id="selection-count">No commits selected</p> <!-- Related to brushing -->
+      <dl id="language-breakdown" class="stats"></dl> <!-- Related to brushing -->
+
+      <!-- PIE CHART CONTAINER -->
+      <div id="language-pie-chart-container">
+        <h2>Language Distribution</h2>
+        <div class="pie-chart-and-legend-wrapper">
+          <div id="language-pie-chart"></div>
+          <div id="language-pie-legend" class="legend"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Scrollytelling structure for File Visualizations -->
+  <div id="scrolly-files">
+    <div id="files-viz-container"> <!-- Sticky container for the visualization (LEFT) -->
+      <h2>Files Changed Over Time</h2>
+      <dl id="files"></dl> <!-- Existing files unit viz -->
+      <p id="files-info-count">Analyzing files...</p> <!-- Info for file viz -->
+      <dl id="files-type-breakdown" class="stats"></dl> <!-- Language breakdown for files -->
+    </div>
+    <div id="files-story"> <!-- Scrolling text content (RIGHT) -->
+      <!-- Steps for file story will be generated here by JavaScript -->
+    </div>
+  </div>
+
+  <script type="module" src="meta.js"></script>
+</body>
+
 </html>
